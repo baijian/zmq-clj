@@ -2,10 +2,12 @@
 
 ## Intro
 
-*var* is global-mutable
-+var+ is a global-constant
+`*var*` is global-mutable
+
+`+var+` is a global-constant
 
 创建一个线程bind`inproc://test`作为server用来recv消息,
+
 创建5个线程connect`inproc://test`作为client用来循环发送消息.
 
 ## Concurrent Programming
