@@ -38,3 +38,33 @@ $ sudo make install
 
 $ mvn install:install-file -DgroupId=org.zeromq -DartifactId=jzmq 
         -Dversion=2.2.2-SNAPSHOT -Dpackaging=jar -Dfile=/usr/local/share/java/zmq.jar 
+
+## Install ZeroMQ and jzmq on Linux
+
+$ cd zeromq-3.2.4
+
+$ ./configure
+
+$ ./make
+
+$ ./sudo make install
+
+$ ls -all /usr/local/lib/libzmq.*
+
+ $ cd jzmq
+
+$ ./autogen.sh
+
+$ ./configure
+
+$ make 
+
+$ sudo make install
+
+$ ls -all /usr/local/lib/libjzmq*
+
+$ ls -all /usr/local/share/java/*
+
+## Run this demo
+
+$ lein run
