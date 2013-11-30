@@ -36,8 +36,23 @@ $ sudo make install
 
 * 可选
 
-$ mvn install:install-file -DgroupId=org.zeromq -DartifactId=jzmq 
+$ mvn install:install-file -DgroupId=org.zeromq -DartifactId=jzmq \
         -Dversion=2.2.2-SNAPSHOT -Dpackaging=jar -Dfile=/usr/local/share/java/zmq.jar 
+
+* Attention
+
+When I run it on MacOS, it always report `no jzmq in java.library.path`, as I have
+set `:native-path "/usr/local/lib"`, at last I use some code to check the actually
+`java.library.path`.
+
+```
+(println (. System getProperty "java.library.path"))
+```
+Then I found `/usr/local/lib` is not in `java.library.path`,then
+I delete `:native-path "/usr/local/lib"` and add 
+`:jvm-opts ["-Djava.library.path=/usr/local/lib"]`, then run it,
+everything is ok.So it is egg ache,maybe it is a bug of `leiningen`,
+I report a issue about it on github.
 
 ## Install ZeroMQ and jzmq on Linux
 
