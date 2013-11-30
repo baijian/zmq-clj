@@ -1,6 +1,4 @@
-# Introduction to zmq-clj
-
-## Intro
+## Clojure concurrent coding Intro
 
 `*var*` is global-mutable
 
@@ -12,7 +10,7 @@
 
 ## Concurrent Programming
 
-Clojure is designed for concurrentcy.
+Clojure is designed for concurrent.
 Clojure simplifies multi-threaded programming in serveral ways.
 Because the core data structures are immutable, they can be shared readily
 between threads.

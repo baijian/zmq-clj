@@ -7,7 +7,6 @@
                  [org.clojure/clojure-contrib "1.2.0"]
                  [org.zeromq/jzmq "2.2.2-SNAPSHOT"]
                  [org.clojars.mikejs/clojure-zmq "2.0.7-SNAPSHOT"]]
-  ;:native-path "/usr/local/lib"
   :jvm-opts ["-Djava.library.path=/usr/local/lib"]
   :main ^:skip-aot zmq-clj.core
   :target-path "target/%s"

@@ -4,6 +4,8 @@
 
 $ brew install zeromq
 
+**or**
+
 * install zeromq from source code
 
 $ tar -zxvf zeromq-3.2.4.tar.gz
@@ -11,6 +13,12 @@ $ tar -zxvf zeromq-3.2.4.tar.gz
 $ cd zeromq-3.2.4
 
 $ ./configure CFLAGS="-m64" CXXFLAGS="-m64" LDFLAGS="-m64"
+
+    you can use --prefix=$PROJECT/jzmq to specify the path you want
+    to install maybe same folder with your leiningen project. And do not forget
+    to set java.library.path=../jzmq. Do as this you do not hardcode the
+    absolute path into your project.clj and you can get the specific version
+    of jzmq your project requires.
 
 $ make
 
@@ -41,18 +49,15 @@ $ mvn install:install-file -DgroupId=org.zeromq -DartifactId=jzmq \
 
 * Attention
 
-When I run it on MacOS, it always report `no jzmq in java.library.path`, as I have
-set `:native-path "/usr/local/lib"`, at last I use some code to check the actually
-`java.library.path`.
+You should set java.library.path where you install jzmq into.
+Set it with `:jvm-opts ["-Djava.library.path=/usr/local/lib"]` in
+your project.clj.
 
-```
+You can use the following code to check your `java.library.path`.
+
+```clojure
 (println (. System getProperty "java.library.path"))
 ```
-Then I found `/usr/local/lib` is not in `java.library.path`,then
-I delete `:native-path "/usr/local/lib"` and add 
-`:jvm-opts ["-Djava.library.path=/usr/local/lib"]`, then run it,
-everything is ok.So it is egg ache,maybe it is a bug of `leiningen`,
-I report a issue about it on github.
 
 ## Install ZeroMQ and jzmq on Linux
 
