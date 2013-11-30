@@ -4,7 +4,7 @@
 
 $ brew install zeromq
 
-**or**
+***or***
 
 * install zeromq from source code
 
