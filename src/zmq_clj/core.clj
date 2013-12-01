@@ -2,7 +2,7 @@
   (:use org.zeromq.clojure)
   (:gen-class))
 
-(def *ctx* (make-context 0))
+(def ^:dynamic *ctx* (make-context 0))
 
 (defn -main
   "I don't do a whole lot."

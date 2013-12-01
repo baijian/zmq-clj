@@ -14,6 +14,10 @@ $ lein run -m zmq-clj.rrserver
 
 $ lein run -m zmq-clj.rrclient
 
+### pubsub.clj or pub.clj & sub.clj
+
+one pub and severial subs.
+
 
 ## Clojure Concurrent Programming Intro
 
