@@ -1,14 +1,25 @@
-## Clojure concurrent coding Intro
+## zmq-clj intro
 
-`*var*` is global-mutable
-
-`+var+` is a global-constant
+### core.clj
 
 创建一个线程bind`inproc://test`作为server用来recv消息,
 
 创建5个线程connect`inproc://test`作为client用来循环发送消息.
 
-## Concurrent Programming
+### rrserver.clj & rrclient.clj
+
+just rpc examples
+
+$ lein run -m zmq-clj.rrserver
+
+$ lein run -m zmq-clj.rrclient
+
+
+## Clojure Concurrent Programming Intro
+
+`*var*` is global-mutable
+
+`+var+` is a global-constant
 
 Clojure is designed for concurrent.
 Clojure simplifies multi-threaded programming in serveral ways.

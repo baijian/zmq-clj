@@ -1,5 +1,9 @@
 ## Install ZeroMQ and jzmq on MacOX
 
+First the native libraries for `zmq` and `jzmq` must be compiled
+and installed accordingly. Then the `zmq.jar` produced from building
+`jzmq` must be installed to your local Maven repository.
+
 * install zeromq use `homebrew`
 
 $ brew install zeromq
@@ -87,4 +91,4 @@ $ ls -all /usr/local/share/java/*
 
 ## Run this demo
 
-$ lein run
+see doc/intro.md
